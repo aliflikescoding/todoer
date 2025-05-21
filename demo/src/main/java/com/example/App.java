@@ -32,39 +32,14 @@ public class App extends Application {
 
     private void loadIcons(Stage stage, String basePath, String[] iconFiles) {
         for (String iconFile : iconFiles) {
-            String fullPath = basePath + iconFile;
-            System.out.println("Attempting to load: " + fullPath);
-
-            // Try multiple ways to load the resource
-            try {
-                // Method 1: Using Class.getResourceAsStream
-                InputStream iconStream = getClass().getResourceAsStream(fullPath);
-
-                // Method 2: Using ClassLoader.getResourceAsStream
-                if (iconStream == null) {
-                    String classLoaderPath = fullPath.startsWith("/") ? fullPath.substring(1) : fullPath;
-                    System.out.println("Trying ClassLoader with: " + classLoaderPath);
-                    iconStream = getClass().getClassLoader().getResourceAsStream(classLoaderPath);
-                }
-
-                // Method 3: Try with App.class.getResource().toExternalForm()
-                if (iconStream == null) {
-                    System.out.println("Trying URL approach");
-                    String urlPath = App.class.getResource(fullPath).toExternalForm();
-                    stage.getIcons().add(new Image(urlPath));
-                    System.out.println("Successfully loaded via URL: " + urlPath);
-                    continue;
-                }
-
+            try (InputStream iconStream = getClass().getResourceAsStream(basePath + iconFile)) {
                 if (iconStream != null) {
                     stage.getIcons().add(new Image(iconStream));
-                    System.out.println("Successfully loaded: " + fullPath);
-                    iconStream.close();
                 } else {
-                    System.err.println("Icon not found: " + fullPath);
+                    System.err.println("Icon not found: " + basePath + iconFile);
                 }
-            } catch (Exception e) {
-                System.err.println("Error with icon " + iconFile + ": " + e.getMessage());
+            } catch (IOException e) {
+                System.err.println("Error loading icon " + iconFile + ": " + e.getMessage());
             }
         }
     }
