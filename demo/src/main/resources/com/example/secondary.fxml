@@ -12,7 +12,7 @@
       prefWidth="10000" prefHeight="10000"> <!-- Large values to ensure it fills parent -->
     <children>
         <Label text="Secondary View" />
-        <Button fx:id="secondaryButton" text="Switch to Primary View" onAction="#switchToPrimary" styleClass="my-button"/>
+        <Button fx:id="secondaryButton" text="Switch to Primary View" onAction="#switchToPrimary" styleClass="button, button-secondary"/>
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

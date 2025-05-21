@@ -1,12 +1,49 @@
-.my-button {
-  -fx-cursor: hand;
-  -fx-background-color: #3498db;
-  -fx-text-fill: white;
-  -fx-padding: 10px 20px;
-  -fx-background-radius: 5px;
-  -fx-border-width: 0;
+/* Define your custom properties (variables) directly by role */
+.root {
+  -fx-primary: #00A6FF;
+  -fx-secondary: #00E0B8;
+  -fx-background: #F9FAFb;
+  -fx-foreground: #1F2937;
+  -fx-surface: #FFFFFF;
+  -fx-error: #FF4D4F;
+  -fx-warning: #FFBB33;
+  -fx-success: #00E0B8;
 }
 
-.my-button:hover {
-  -fx-background-color: #2980b9;
+/* Example usage of these variables */
+
+.button {
+  -fx-background-color: -fx-primary;
+  -fx-text-fill: -fx-surface;
+  -fx-font-size: 14px;
+  -fx-padding: 8px 15px;
+  -fx-background-radius: 5px;
+  -fx-cursor: hand;
+}
+
+.label {
+  -fx-text-fill: -fx-foreground;
+  -fx-font-size: 16px;
+}
+
+.pane {
+  -fx-background-color: -fx-background;
+}
+
+/* Example of a secondary button */
+.button-secondary {
+  -fx-background-color: -fx-secondary;
+  -fx-text-fill: -fx-foreground;
+  /* Charcoal text on secondary button */
+}
+
+/* Hover effects using variables */
+.button:hover {
+  -fx-background-color: derive(-fx-primary, 20%);
+  /* Lighter on hover */
+}
+
+.button-secondary:hover {
+  -fx-background-color: derive(-fx-secondary, 20%);
+  /* Lighter on hover */
 }
