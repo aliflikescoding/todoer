@@ -1,21 +1,21 @@
 # Maven build directories
-/target/
+target
 
 # Eclipse IDE files
-/.classpath
-/.project
-/.settings/
+.classpath
+.project
+.settings/
 
 # IntelliJ IDEA files
-/.idea/
-/*.iml
+.idea/
+*.iml
 
 # VSCode files
-/.vscode/
+.vscode/
 
 # Java specific files
-*.class
-*.log
+.class
+.log
 
 # OS specific files
 .DS_Store
