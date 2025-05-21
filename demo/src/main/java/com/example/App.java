@@ -23,7 +23,12 @@ public class App extends Application {
                 "app-icon-128x128.png"
         });
 
-        scene = new Scene(loadFXML("primary"), 640, 480);
+        scene = new Scene(loadFXML("primary"));
+
+        stage.setMaximized(true);
+        stage.setMinWidth(1000);
+        stage.setMinHeight(800);
+
         scene.getStylesheets().add(getClass().getResource("/com/example/style.css").toExternalForm());
         stage.setTitle("Todoer");
         stage.setScene(scene);
