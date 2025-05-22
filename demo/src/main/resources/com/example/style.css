@@ -67,6 +67,8 @@
   -fx-padding: 8px 15px;
   -fx-background-radius: 5px;
   -fx-cursor: hand;
+  -fx-font-weight: 800;
+  /* Numeric values can also be used */
 }
 
 .button-primary {
