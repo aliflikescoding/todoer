@@ -10,17 +10,6 @@
   -fx-success: #00E0B8;
 }
 
-/* Example usage of these variables */
-
-.button {
-  -fx-background-color: -fx-primary;
-  -fx-text-fill: -fx-surface;
-  -fx-font-size: 14px;
-  -fx-padding: 8px 15px;
-  -fx-background-radius: 5px;
-  -fx-cursor: hand;
-}
-
 .label {
   -fx-text-fill: -fx-foreground;
   -fx-font-size: 16px;
@@ -28,6 +17,61 @@
 
 .pane {
   -fx-background-color: -fx-background;
+}
+
+/* Header classes */
+.header {
+  -fx-background-color: -fx-background;
+  -fx-padding: 20px 32px;
+  /* Top/Bottom 20px, Left/Right 32px */
+  -fx-text-fill: -fx-foreground;
+  -fx-border-color: #ccc;
+  /* Border color */
+  -fx-border-width: 0 0 1px 0;
+  /* Top, Right, Bottom, Left */
+  /* 1px border on all sides by default */
+  -fx-border-insets: 0;
+  /* Ensure border is flush with content */
+  -fx-border-style: solid;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 6, 0.0, 0, 4),
+    dropshadow(gaussian, rgba(0, 0, 0, 0.1), 4, 0.0, 0, 2);
+}
+
+/* Footer classes */
+.footer {
+  -fx-background-color: -fx-background;
+  -fx-padding: 17px 32px;
+  /* Top/Bottom 20px, Left/Right 32px */
+  -fx-text-fill: -fx-foreground;
+  -fx-border-color: #ccc;
+  /* Border color */
+  -fx-border-width: 1px 0 0 0;
+  /* Top, Right, Bottom, Left */
+  /* 1px border on all sides by default */
+  -fx-border-insets: 0;
+  /* Ensure border is flush with content */
+  -fx-border-style: solid;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 6, 0.0, 0, 4),
+    dropshadow(gaussian, rgba(0, 0, 0, 0.1), 4, 0.0, 0, 2);
+}
+
+.footer-text {
+  -fx-text-fill: -fx-foreground;
+  -fx-font-size: 12px;
+}
+
+/* button classes */
+
+.button {
+  -fx-font-size: 14px;
+  -fx-padding: 8px 15px;
+  -fx-background-radius: 5px;
+  -fx-cursor: hand;
+}
+
+.button-primary {
+  -fx-background-color: -fx-primary;
+  -fx-text-fill: -fx-surface;
 }
 
 /* Example of a secondary button */
