@@ -21,7 +21,7 @@
 
 /* Header classes */
 .header {
-  -fx-background-color: -fx-background;
+  -fx-background-color: -fx-surface;
   -fx-padding: 20px 32px;
   /* Top/Bottom 20px, Left/Right 32px */
   -fx-text-fill: -fx-foreground;
@@ -39,7 +39,7 @@
 
 /* Footer classes */
 .footer {
-  -fx-background-color: -fx-background;
+  -fx-background-color: -fx-surface;
   -fx-padding: 17px 32px;
   /* Top/Bottom 20px, Left/Right 32px */
   -fx-text-fill: -fx-foreground;
@@ -51,8 +51,8 @@
   -fx-border-insets: 0;
   /* Ensure border is flush with content */
   -fx-border-style: solid;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 6, 0.0, 0, 4),
-    dropshadow(gaussian, rgba(0, 0, 0, 0.1), 4, 0.0, 0, 2);
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 6, 0.0, 0, -4),
+    dropshadow(gaussian, rgba(0, 0, 0, 0.1), 4, 0.0, 0, -2);
 }
 
 .footer-text {
