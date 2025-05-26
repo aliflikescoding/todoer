@@ -24,4 +24,14 @@ public class AllController {
     private void switchToPersonal() throws IOException {
         App.setRoot("personal");
     }
+
+    @FXML
+    private void switchToWork() throws IOException {
+        App.setRoot("work");
+    }
+
+    @FXML
+    private void switchToShopping() throws IOException {
+        App.setRoot("shopping");
+    }
 }
