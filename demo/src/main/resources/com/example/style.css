@@ -60,6 +60,36 @@
   -fx-font-size: 12px;
 }
 
+/* sidebar task */
+.sidebar {
+  -fx-background-color: -fx-surface;
+  -fx-border-color: #ccc;
+  -fx-border-width: 0 1px 0 0;
+  -fx-border-style: solid;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 6, 0.0, 0, 4);
+}
+
+.sidebar-item-inactive {
+  -fx-text-fill: #888888;
+  /* A subtle gray for inactive text */
+  /* Clear, widely available font */
+  -fx-font-size: 1rem;
+  /* Slightly smaller than active items for less emphasis */
+  -fx-padding: 15px 25px;
+  /* Top/bottom 10px, left/right 15px padding */
+  /* For labels, text-decoration is not directly applicable as in HTML.
+     If this were a Button, you might consider its default styling. */
+  -fx-transition: -fx-text-fill 0.2s ease-in-out;
+  /* Smooth transition for hover effects */
+}
+
+.sidebar-item-inactive:hover {
+  -fx-text-fill: #555555;
+  /* Slightly darker gray on hover to indicate interactivity */
+  -fx-cursor: hand;
+  /* Indicate it's clickable (similar to pointer) */
+}
+
 /* button classes */
 
 .button {
