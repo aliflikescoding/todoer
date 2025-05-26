@@ -31,8 +31,8 @@ public class TaskManager {
     // Menampilkan hanya yang belum selesai
     public void showPendingTasks() {
         tasks.stream()
-             .filter(task -> !task.isDone())
-             .forEach(Task::displayTask);
+            .filter(task -> !task.isDone())
+            .forEach(Task::displayTask);
     }
 
     // Menandai task sebagai selesai
