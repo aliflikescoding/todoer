@@ -1,12 +1,12 @@
-public class Shopping extends Task {
+public class PersonalTask extends Task {
 
-    public Shopping(String name, String description) {
+    public PersonalTask(String name, String description) {
         super(name, description);
     }
 
     @Override
     public void displayTask() {
-        System.out.println("🛒 [Shopping Task]");
+        System.out.println("🏠 [Personal Task]");
         System.out.println("Name       : " + name);
         System.out.println("Description: " + description);
         System.out.println("Status     : " + (done ? "Done ✅" : "Pending ⏳"));
