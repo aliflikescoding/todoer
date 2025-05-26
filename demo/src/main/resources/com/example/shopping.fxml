@@ -38,7 +38,7 @@
                     <Label onMouseClicked="#switchToHome" styleClass="sidebar-item-inactive" text="Home" />
                     <Label onMouseClicked="#switchToPersonal" styleClass="sidebar-item-inactive" text="Personal Task" />
                     <Label onMouseClicked="#switchToWork" styleClass="sidebar-item-inactive" text="Work Task" />
-                    <Label onMouseClicked="#switchToShopping" styleClass="sidebar-item-inactive" text="Shopping" />
+                    <Label onMouseClicked="#switchToShopping" styleClass="sidebar-item-active" text="Shopping" />
                 </children>
                 <padding>
                     <Insets top="20.0" left="15.0" right="10.0" bottom="0.0"/>

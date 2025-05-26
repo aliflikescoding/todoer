@@ -73,13 +73,27 @@
   -fx-text-fill: #888888;
   -fx-font-size: 1rem;
   -fx-padding: 15px 25px;
+  /* If you want a defined width for both, you can add it here too */
+  /* -fx-pref-width: 200px; */
+}
+
+.sidebar-item-active {
+  -fx-background-color: -fx-primary;
+  -fx-text-fill: -fx-surface;
+  -fx-background-radius: 5px;
+  -fx-font-size: 1rem;
+  -fx-padding: 15px 25px;
+  /* Make it fill the available width */
+  -fx-pref-width: 100%;
+  /* Or a specific value like the inactive item */
+  -fx-max-width: infinity;
+  /* Ensures it can expand */
 }
 
 .sidebar-item-inactive:hover {
   -fx-text-fill: #555555;
   -fx-cursor: hand;
 }
-
 /* button classes */
 
 .button {

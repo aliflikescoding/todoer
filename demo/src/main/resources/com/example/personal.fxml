@@ -36,7 +36,7 @@
                   styleClass="sidebar">
                 <children>
                     <Label onMouseClicked="#switchToHome" styleClass="sidebar-item-inactive" text="Home" />
-                    <Label onMouseClicked="#switchToPersonal" styleClass="sidebar-item-inactive" text="Personal Task" />
+                    <Label onMouseClicked="#switchToPersonal" styleClass="sidebar-item-active" text="Personal Task" />
                     <Label onMouseClicked="#switchToWork" styleClass="sidebar-item-inactive" text="Work Task" />
                     <Label onMouseClicked="#switchToShopping" styleClass="sidebar-item-inactive" text="Shopping" />
                 </children>
