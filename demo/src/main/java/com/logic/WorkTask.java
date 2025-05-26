@@ -1,3 +1,4 @@
+package com.logic;
 public class WorkTask extends Task {
     // Constructor
     public WorkTask(String name, String description) {
