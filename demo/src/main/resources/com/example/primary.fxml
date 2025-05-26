@@ -11,7 +11,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.171"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.PrimaryController">
+            fx:controller="com.example.AllController">
 
     <VBox AnchorPane.topAnchor="0" AnchorPane.rightAnchor="0"
           AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0">
@@ -35,8 +35,8 @@
             <VBox prefWidth="200.0" spacing="10.0"
                   styleClass="sidebar">
                 <children>
-                    <Label styleClass="sidebar-item-inactive" text="Home" />
-                    <Label styleClass="sidebar-item-inactive" text="Personal Task" />
+                    <Label onMouseClicked="#switchToHome" styleClass="sidebar-item-inactive" text="Home" />
+                    <Label onMouseClicked="#switchToPersonal" styleClass="sidebar-item-inactive" text="Personal Task" />
                     <Label styleClass="sidebar-item-inactive" text="Work Task" />
                     <Label styleClass="sidebar-item-inactive" text="Shopping" />
                 </children>
