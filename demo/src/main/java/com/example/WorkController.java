@@ -24,9 +24,16 @@ public class WorkController {
   private void switchToShopping() throws IOException {
       App.setRoot("shopping");
   }
-
+  
   @FXML
-  private void switchToCreateWork() throws IOException {
-    App.setRoot("createWork");
+  private void switchToCreateWork() {
+    try {
+      System.out.println("Attempting to load createShopping.fxml from: " +
+          App.class.getResource("createWork.fxml"));
+      App.setRoot("createWork");
+    } catch (IOException e) {
+      e.printStackTrace();
+      System.err.println("Error loading createShopping.fxml: " + e.getMessage());
+    }
   }
 }
