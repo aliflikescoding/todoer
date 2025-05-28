@@ -8,7 +8,12 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
+import com.logic.TaskManager;
+import com.logic.WorkTask;
+
 public class CreateWorkController {
+    private TaskManager workManager = App.getWorkManager();
+
     @FXML
     private TextField nameField;
     @FXML
@@ -37,12 +42,13 @@ public class CreateWorkController {
     }
 
     @FXML
-    private void handleSubmit() {
+    private void handleSubmit() throws IOException {
         String name = nameField.getText();
         String description = descriptionField.getText();
         LocalDate deadline = deadlinePicker.getValue();
 
-        System.out.println("Submitted: " + name + ", " + description + ", Deadline: " + deadline);
+        workManager.addTask(new WorkTask(name, description, deadline));
+        App.setRoot("work");
         // TODO: Save or process the form data
     }
 }

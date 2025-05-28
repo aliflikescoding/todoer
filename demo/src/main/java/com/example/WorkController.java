@@ -1,39 +1,46 @@
 package com.example;
 
 import java.io.IOException;
-
 import javafx.fxml.FXML;
+import com.logic.TaskManager;
 
 public class WorkController {
+  private TaskManager workManager;
+
+  public void initialize() {
+    this.workManager = App.getWorkManager();
+    System.out.println(this.workManager.showAllTasks());
+  }
+
   @FXML
   private void switchToHome() throws IOException {
-      App.setRoot("home");
+    App.setRoot("home");
   }
 
   @FXML
   private void switchToPersonal() throws IOException {
-      App.setRoot("personal");
+    App.setRoot("personal");
   }
 
   @FXML
   private void switchToWork() throws IOException {
-      App.setRoot("work");
+    App.setRoot("work");
   }
 
   @FXML
   private void switchToShopping() throws IOException {
-      App.setRoot("shopping");
+    App.setRoot("shopping");
   }
-  
+
   @FXML
   private void switchToCreateWork() {
     try {
-      System.out.println("Attempting to load createShopping.fxml from: " +
+      System.out.println("Attempting to load createWork.fxml from: " +
           App.class.getResource("createWork.fxml"));
       App.setRoot("createWork");
     } catch (IOException e) {
       e.printStackTrace();
-      System.err.println("Error loading createShopping.fxml: " + e.getMessage());
+      System.err.println("Error loading createWork.fxml: " + e.getMessage());
     }
   }
 }

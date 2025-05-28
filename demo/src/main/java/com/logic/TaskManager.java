@@ -1,6 +1,6 @@
 package com.logic;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate; // Changed from LocalDateTime
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -42,9 +42,9 @@ public class TaskManager {
 
     public List<WorkTask> getOverdueWorkTasks() {
         return tasks.stream()
-                .filter(task -> task instanceof WorkTask) // pastikan ini WorkTask
-                .map(task -> (WorkTask) task) // cast ke WorkTask
-                .filter(workTask -> workTask.getDeadline().isBefore(LocalDateTime.now()))
+                .filter(task -> task instanceof WorkTask)
+                .map(task -> (WorkTask) task)
+                .filter(workTask -> workTask.getDeadline().isBefore(LocalDate.now())) // Changed to LocalDate
                 .collect(Collectors.toList());
     }
 
@@ -63,9 +63,7 @@ public class TaskManager {
     @Override
     public String toString() {
         return String.format(
-            "{\"tasks\": }",
-            tasks
-        );
+                "{\"tasks\": }",
+                tasks);
     }
-
 }

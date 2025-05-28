@@ -10,8 +10,15 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.io.InputStream;
 
+/* object import */
+import com.logic.TaskManager;
+
 public class App extends Application {
     private static Scene scene;
+    private static TaskManager workManager = new TaskManager();
+    private static TaskManager personalManager = new TaskManager();
+    private static TaskManager shoppingManager = new TaskManager();
+
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -51,6 +58,10 @@ public class App extends Application {
 
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
+    }
+
+    public static TaskManager getWorkManager() {
+        return workManager;
     }
 
     private static Parent loadFXML(String fxml) throws IOException {

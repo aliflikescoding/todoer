@@ -1,19 +1,19 @@
 package com.logic;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public class WorkTask extends Task {
-    private LocalDateTime dueDate;
+    private LocalDate dueDate;
     private boolean isOverdue = false;
 
-    public WorkTask(String name, String description, LocalDateTime dueDate) {
+    public WorkTask(String name, String description, LocalDate dueDate) {
         super(name, description);
         this.dueDate = dueDate;
-        checkOverdue(); // langsung periksa saat dibuat
+        checkOverdue(); // check immediately when created
     }
 
     // Getter
-    public LocalDateTime getDeadline() {
+    public LocalDate getDeadline() {
         return dueDate;
     }
 
@@ -22,14 +22,14 @@ public class WorkTask extends Task {
     }
 
     // Setter
-    public void setDeadline(LocalDateTime dueDate) {
+    public void setDeadline(LocalDate dueDate) {
         this.dueDate = dueDate;
-        checkOverdue(); // periksa ulang jika tanggal diubah
+        checkOverdue(); // re-check if date is changed
     }
 
-    // Cek apakah task sudah melewati deadline
+    // Check if task has passed its deadline
     public void checkOverdue() {
-        if (!done && dueDate != null && LocalDateTime.now().isAfter(dueDate)) {
+        if (!done && dueDate != null && LocalDate.now().isAfter(dueDate)) {
             isOverdue = true;
         } else {
             isOverdue = false;
