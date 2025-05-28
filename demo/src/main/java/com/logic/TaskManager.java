@@ -1,11 +1,10 @@
+package com.logic;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-<<<<<<< Updated upstream
-=======
 import java.util.Optional;
 import java.util.stream.Collectors;
->>>>>>> Stashed changes
 
 public class TaskManager {
     private List<Task> tasks = new ArrayList<>();
@@ -36,22 +35,28 @@ public class TaskManager {
     }
 
     public Optional<Task> showTaskByName(String taskName) {
-        // kembalikan task dengan parameter nama taskName
+        return tasks.stream()
+                .filter(task -> task.getName().equals(taskName))
+                .findFirst();
     }
 
-
     public List<WorkTask> getOverdueWorkTasks() {
-        // kembalikan list work task yang deadline nya sudah lewat
+        return tasks.stream()
+                .filter(task -> task instanceof WorkTask) // pastikan ini WorkTask
+                .map(task -> (WorkTask) task) // cast ke WorkTask
+                .filter(workTask -> workTask.getDeadline().isBefore(LocalDateTime.now()))
+                .collect(Collectors.toList());
     }
 
     public List<Task> showPendingTasks() {
-        // Kembalikan list task yang belum selesai
+        return tasks.stream()
+                .filter(task -> !task.isDone())
+                .collect(Collectors.toList());
     }
 
     public List<Task> showArchivedTasks() {
-        // Kembalikan list task yang sudah diarsipkan
+        return tasks.stream()
+                .filter(Task::isArchived)
+                .collect(Collectors.toList());
     }
-
-    
-
 }

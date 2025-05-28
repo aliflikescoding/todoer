@@ -1,10 +1,6 @@
 package com.logic;
 
-<<<<<<< Updated upstream
-public class Task {
-=======
-abstract class Task {
->>>>>>> Stashed changes
+public abstract class Task {
     protected String name;
     protected String description;
     protected boolean done;
@@ -13,49 +9,16 @@ abstract class Task {
     public Task(String name, String description) {
         this.name = name;
         this.description = description;
-        this.done = false;  // Default status task adalah belum selesai
+        this.done = false;
     }
 
-    // Getter dan Setter
+    // Getter
     public String getName() {
         return name;
     }
 
     public String getDescription() {
         return description;
-    }
-
-<<<<<<< Updated upstream
-    public boolean isDone() {
-        return done;
-=======
-    public void setDescription(String description) {
-        this.description = description;
->>>>>>> Stashed changes
-    }
-
-    public void setDone(boolean done) {
-        this.done = done;
-    }
-
-<<<<<<< Updated upstream
-    // Menandai task sebagai selesai
-    public void markAsDone() {
-        this.done = true;
-    }
-
-    // Menampilkan task
-    public void displayTask() {
-        System.out.println("📋 [Task]");
-        System.out.println("Name       : " + name);
-        System.out.println("Description: " + description);
-        System.out.println("Status     : " + (done ? "Done ✅" : "Pending ⏳"));
-        System.out.println("-----------------------------------");
-    }
-}
-=======
-    public void markDone() {
-        this.done = true;
     }
 
     public boolean isDone() {
@@ -66,6 +29,21 @@ abstract class Task {
         return archived;
     }
 
-    public abstract void updateStatus();
+    // Setter
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setDone(boolean done) {
+        this.done = done;
+    }
+
+    public void setArchived(boolean archived) {
+        this.archived = archived;
+    }
+
+    // Tandai task selesai
+    public void markAsDone() {
+        this.done = true;
+    }
 }
->>>>>>> Stashed changes
