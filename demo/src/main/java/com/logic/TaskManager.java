@@ -1,50 +1,57 @@
-package com.logic;
-
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+<<<<<<< Updated upstream
+=======
+import java.util.Optional;
+import java.util.stream.Collectors;
+>>>>>>> Stashed changes
 
 public class TaskManager {
-    private List<Task> tasks;
+    private List<Task> tasks = new ArrayList<>();
 
-    public TaskManager() {
-        tasks = new ArrayList<>();
-    }
-
-    // Menambahkan task
     public void addTask(Task task) {
         tasks.add(task);
     }
 
-    // Menghapus task berdasarkan nama
-    public void removeTask(String name) {
-        tasks.removeIf(task -> task.getName().equalsIgnoreCase(name));
+    public boolean removetask(String taskName) {
+        return tasks.removeIf(task -> task.getName().equals(taskName));
     }
 
-    // Menampilkan semua task
-    public void showAllTasks() {
-        if (tasks.isEmpty()) {
-            System.out.println("Tidak ada tugas.");
+    public boolean markTaskDone(String taskName) {
+        Optional<Task> task = tasks.stream()
+                .filter(t -> t.getName().equals(taskName))
+                .findFirst();
+
+        if (task.isPresent()) {
+            task.get().markAsDone();
+            return true;
         } else {
-            tasks.forEach(Task::displayTask);
+            return false;
         }
     }
 
-    // Menampilkan hanya yang belum selesai
-    public void showPendingTasks() {
-        tasks.stream()
-             .filter(task -> !task.isDone())
-             .forEach(Task::displayTask);
+    public List<Task> showAllTasks() {
+        return new ArrayList<>(tasks);
     }
 
-    // Menandai task sebagai selesai
-    public void markTaskDone(String name) {
-        for (Task task : tasks) {
-            if (task.getName().equalsIgnoreCase(name)) {
-                task.setDone(true);
-                System.out.println("Task '" + name + "' ditandai sebagai selesai.");
-                return;
-            }
-        }
-        System.out.println("Task dengan nama '" + name + "' tidak ditemukan.");
+    public Optional<Task> showTaskByName(String taskName) {
+        // kembalikan task dengan parameter nama taskName
     }
+
+
+    public List<WorkTask> getOverdueWorkTasks() {
+        // kembalikan list work task yang deadline nya sudah lewat
+    }
+
+    public List<Task> showPendingTasks() {
+        // Kembalikan list task yang belum selesai
+    }
+
+    public List<Task> showArchivedTasks() {
+        // Kembalikan list task yang sudah diarsipkan
+    }
+
+    
+
 }
