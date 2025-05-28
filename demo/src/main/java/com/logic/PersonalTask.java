@@ -4,14 +4,14 @@ import java.time.*;
 public class PersonalTask extends Task {
     private LocalDateTime donetime;
 
-    public PersonalTask(String name, String description, Bool done) {
-        super(name, description, done);
+    public PersonalTask(String name, String description) {
+        super(name, description);
         this.donetime = null;
     }
 
     @Override
     public void markAsDone() {
-        this,done = true;
+        this.done = true;
         this.donetime = LocalDateTime.now();
     }
 
