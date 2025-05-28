@@ -11,7 +11,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.171"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.WorkController">
+            fx:controller="com.example.CreateWorkController">
 
     <VBox AnchorPane.topAnchor="0" AnchorPane.rightAnchor="0"
           AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0">
@@ -37,7 +37,7 @@
                 <children>
                     <Label onMouseClicked="#switchToHome" styleClass="sidebar-item-inactive" text="Home" />
                     <Label onMouseClicked="#switchToPersonal" styleClass="sidebar-item-inactive" text="Personal Task" />
-                    <Label onMouseClicked="#switchToWork" styleClass="sidebar-item-active" text="Work Task" />
+                    <Label onMouseClicked="#switchToWork" styleClass="sidebar-item-inactive" text="Work Task" />
                     <Label onMouseClicked="#switchToShopping" styleClass="sidebar-item-inactive" text="Shopping" />
                 </children>
                 <padding>
@@ -48,8 +48,8 @@
             <!-- Main Content Area -->
             <VBox alignment="CENTER" spacing="20.0" VBox.vgrow="ALWAYS">
                 <children>
-                    <Button text="Create Work Task" onAction="#switchToCreateWork"/>
-                    <Label text="Work"/>
+                    <Button text="Back to work" onAction="#switchToWork"/>
+                    <Label text="Create Work Task"/>
                 </children>
             </VBox>
         </HBox>
