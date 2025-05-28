@@ -48,7 +48,7 @@ public class AllController implements Initializable {
         // Loop through the dataArray and create UI elements
         for (String task : dataArray) {
             HBox taskRow = new HBox(10);
-            taskRow.setAlignment(javafx.geometry.Pos.CENTER_LEFT);
+            taskRow.setAlignment(javafx.geometry.Pos.CENTER);
 
             Label taskLabel = new Label(task);
             taskLabel.setStyle("-fx-font-size: 16px; -fx-text-fill: #333;");
