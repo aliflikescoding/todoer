@@ -31,7 +31,7 @@ public class TaskManager {
     }
 
     public List<Task> showAllTasks() {
-        return new ArrayList<>(tasks);
+        return tasks;
     }
 
     public Optional<Task> showTaskByName(String taskName) {
@@ -59,4 +59,13 @@ public class TaskManager {
                 .filter(Task::isArchived)
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public String toString() {
+        return String.format(
+            "{\"tasks\": }",
+            tasks
+        );
+    }
+
 }

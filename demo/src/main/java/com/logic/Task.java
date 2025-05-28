@@ -3,13 +3,12 @@ package com.logic;
 public abstract class Task {
     protected String name;
     protected String description;
-    protected boolean done;
+    protected boolean done = false;
     protected boolean archived = false;
 
     public Task(String name, String description) {
         this.name = name;
         this.description = description;
-        this.done = false;
     }
 
     // Getter
@@ -45,5 +44,12 @@ public abstract class Task {
     // Tandai task selesai
     public void markAsDone() {
         this.done = true;
+    }
+
+    public String toString() {
+        return String.format(
+            "{\"name\":\"%s\", \"description\":\"%s\", \"done\":%b, \"archived\":%b}",
+            name, description, done, archived
+        );
     }
 }

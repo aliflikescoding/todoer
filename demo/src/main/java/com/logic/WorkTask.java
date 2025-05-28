@@ -1,16 +1,14 @@
 package com.logic;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class WorkTask extends Task {
     private LocalDateTime dueDate;
     private boolean isOverdue = false;
 
-    public WorkTask(String name, String description, boolean done, LocalDateTime dueDate) {
+    public WorkTask(String name, String description, LocalDateTime dueDate) {
         super(name, description);
         this.dueDate = dueDate;
-        this.done = done;
         checkOverdue(); // langsung periksa saat dibuat
     }
 
@@ -36,5 +34,11 @@ public class WorkTask extends Task {
         } else {
             isOverdue = false;
         }
+    }
+
+    @Override
+    public void markAsDone() {
+        super.markAsDone();
+        setArchived(true);
     }
 }

@@ -5,8 +5,11 @@ public class Shopping extends Task {
     private Integer quantity;
     private double price;
 
-    public Shopping(String name, String description) {
+    public Shopping(String name, String description, String storeName, Integer quantity, double price) {
         super(name, description);
+        this.storeName = storeName;
+        this.quantity = quantity;
+        this.price = price;
     }
 
     // Getter
@@ -33,5 +36,19 @@ public class Shopping extends Task {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    @Override
+    public void markAsDone() {
+        super.markAsDone();
+        setArchived(true);
+    }
+
+    @Override
+    public String toString() {
+        return String.format(
+            "{\"name\": \"%s\", \"description\": \"%s\", \"storeName\": \"%s\", \"quantity\": %d, \"price\": %.2f, \"done\": %b, \"archived\": %b}",
+            name, description, storeName, quantity, price, done, archived
+        );
     }
 }
