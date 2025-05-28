@@ -71,7 +71,7 @@
 
 .sidebar-item-inactive {
   -fx-text-fill: #888888;
-  -fx-font-size: 1rem;
+  -fx-font-size: 16px;
   -fx-padding: 15px 25px;
   /* If you want a defined width for both, you can add it here too */
   /* -fx-pref-width: 200px; */
@@ -81,7 +81,7 @@
   -fx-background-color: -fx-primary;
   -fx-text-fill: -fx-surface;
   -fx-background-radius: 5px;
-  -fx-font-size: 1rem;
+  -fx-font-size: 16px;
   -fx-padding: 15px 25px;
   /* Make it fill the available width */
   -fx-pref-width: 100%;

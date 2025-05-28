@@ -1,1 +1,0 @@
-Semua logic disini
