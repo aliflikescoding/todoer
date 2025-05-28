@@ -16,7 +16,6 @@
     <VBox AnchorPane.topAnchor="0" AnchorPane.rightAnchor="0"
           AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0">
 
-        <!-- Header -->
         <HBox styleClass="header" alignment="CENTER_LEFT" prefWidth="10000">
             <children>
                 <ImageView>
@@ -28,10 +27,8 @@
             </padding>
         </HBox>
 
-        <!-- Main Content with Sidebar -->
         <HBox VBox.vgrow="ALWAYS">
 
-            <!-- Sidebar -->
             <VBox prefWidth="200.0" spacing="10.0"
                   styleClass="sidebar">
                 <children>
@@ -45,15 +42,10 @@
                 </padding>
             </VBox>
 
-            <!-- Main Content Area -->
-            <VBox alignment="CENTER" spacing="20.0" VBox.vgrow="ALWAYS">
-                <children>
-                    <Label text="Home View"/>
-                </children>
-            </VBox>
+            <VBox fx:id="mainContentContainer" alignment="CENTER" spacing="20.0" VBox.vgrow="ALWAYS">
+                </VBox>
         </HBox>
 
-        <!-- Footer -->
         <HBox styleClass="footer" alignment="CENTER" prefWidth="10000">
             <children>
                 <Label text="Copyright @ 2025 Todoer" styleClass="footer-text"/>
