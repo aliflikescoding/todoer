@@ -1,50 +1,17 @@
+package com.logic;
+import java.time.*;
+
 public class WorkTask extends Task {
-    // Constructor
-    public WorkTask(String name, String description) {
-        this.name = name;
-        this.description = description;
-        this.done = false;
+    private LocalDateTime dueDate;
+    private boolean isOverdue = false;
+
+    public WorkTask(String name, String description, boolean done, LocalDateTime dueDate) {
+        super(name, description);  // Memanggil konstruktor Task
+        this.dueDate = dueDate;
     }
 
-    // Getter and Setter
-    public String getName() {
-        return name;
+    public void checkOverdue() {
+        // kalo now date > due date, is overdue = true
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public boolean isDone() {
-        return done;
-    }
-
-    public void setDone(boolean done) {
-        this.done = done;
-    }
-
-    // Method tambahan
-    public void markAsDone() {
-        this.done = true;
-    }
-
-    public void markAsUndone() {
-        this.done = false;
-    }
-
-    public void displayTask() {
-        System.out.println("📋 [Work Task]");
-        System.out.println("Name       : " + name);
-        System.out.println("Description: " + description);
-        System.out.println("Status     : " + (done ? "Done ✅" : "Pending ⏳"));
-        System.out.println("-----------------------------------");
-    }
 }

@@ -1,12 +1,13 @@
 package com.logic;
 
 public class Shopping extends Task {
-  public Shopping(String name, String description, boolean done) {
-      super(name, description, done);
-  }
+    private List<item> items = new ArrayList<>();
 
-  @Override
-  public void method() {
-    System.out.println("Executing Shopping Task: " + name);
-  }
+    public Shopping(String name, String description, boolean done) {
+        super(name, description, done);
+    }
+
+    public void addItem(item item) {
+        items.add(item);
+    }
 }
