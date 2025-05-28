@@ -27,6 +27,13 @@ public class PersonalController {
 
   @FXML
   private void switchToCreatePersonal() throws IOException {
-    App.setRoot("createPersonal");
+    try {
+      System.out.println("Attempting to load createShopping.fxml from: " +
+          App.class.getResource("createPersonal.fxml"));
+      App.setRoot("createPersonal");
+    } catch (IOException e) {
+      e.printStackTrace();
+      System.err.println("Error loading createShopping.fxml: " + e.getMessage());
+    }
   }
 }
