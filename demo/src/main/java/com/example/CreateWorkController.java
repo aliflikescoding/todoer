@@ -45,8 +45,8 @@ public class CreateWorkController {
 
     @FXML
     private void handleSubmit() throws IOException {
-        String name = nameField.getText();
-        String description = descriptionField.getText();
+        String name = nameField.getText().trim();
+        String description = descriptionField.getText().trim();
         LocalDate deadline = deadlinePicker.getValue();
 
         if (!isValidInput(name, description, deadline)) {
