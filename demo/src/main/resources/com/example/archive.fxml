@@ -12,7 +12,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.171"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.PersonalController">
+            fx:controller="com.example.ArchiveController">
 
     <VBox AnchorPane.topAnchor="0" AnchorPane.rightAnchor="0"
           AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0">
@@ -37,10 +37,10 @@
                   styleClass="sidebar">
                 <children>
                     <Label onMouseClicked="#switchToHome" styleClass="sidebar-item-inactive" text="Home" />
-                    <Label onMouseClicked="#switchToPersonal" styleClass="sidebar-item-active" text="Personal Task" />
+                    <Label onMouseClicked="#switchToPersonal" styleClass="sidebar-item-inactive" text="Personal Task" />
                     <Label onMouseClicked="#switchToWork" styleClass="sidebar-item-inactive" text="Work Task" />
                     <Label onMouseClicked="#switchToShopping" styleClass="sidebar-item-inactive" text="Shopping" />
-                    <Label onMouseClicked="#switchToArchive" styleClass="sidebar-item-inactive" text="Archive" />
+                    <Label onMouseClicked="#switchToArchive" styleClass="sidebar-item-active" text="Archive" />
                 </children>
                 <padding>
                     <Insets top="20.0" left="15.0" right="10.0" bottom="0.0"/>
@@ -55,17 +55,14 @@
                     AnchorPane.leftAnchor="20" 
                     AnchorPane.rightAnchor="20">
                     <children>
-                        <Label text="Personal" styleClass="list-title"/>
+                        <Label text="Archived" styleClass="list-title"/>
                         <Region HBox.hgrow="ALWAYS"/> <!-- This acts as a spacer -->
-                        <Button text="+ Create Personal Task" 
-                            styleClass="button, button-primary" 
-                            onAction="#switchToCreatePersonal"/>
                     </children>
                 </HBox>
                 <VBox fx:id="taskContainer" alignment="TOP_LEFT" spacing="10.0" styleClass="list-parent" 
-                    AnchorPane.topAnchor="95" AnchorPane.bottomAnchor="20" 
-                    AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
-                    <!-- Personal tasks will be dynamically added here -->
+                AnchorPane.topAnchor="95" AnchorPane.bottomAnchor="20" 
+                AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
+                    <!-- Shopping items will be dynamically added here -->
                 </VBox>
             </AnchorPane>
         </HBox>

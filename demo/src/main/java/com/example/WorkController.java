@@ -90,6 +90,11 @@ public class WorkController {
   }
 
   @FXML
+  private void switchToArchive() throws IOException {
+    App.setRoot("archive");
+  }
+
+  @FXML
   private void switchToCreateWork() {
     try {
       System.out.println("Attempting to load createWork.fxml from: " +

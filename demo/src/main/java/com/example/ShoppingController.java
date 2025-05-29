@@ -90,6 +90,11 @@ public class ShoppingController {
   }
 
   @FXML
+  private void switchToArchive() throws IOException {
+    App.setRoot("archive");
+  }
+
+  @FXML
   private void switchToCreateShopping() {
     try {
       System.out.println("Attempting to load createShopping.fxml from: " +

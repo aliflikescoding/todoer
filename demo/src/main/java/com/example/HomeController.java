@@ -66,4 +66,9 @@ public class HomeController {
     private void switchToShopping() throws IOException {
         App.setRoot("shopping");
     }
+
+    @FXML
+    private void switchToArchive() throws IOException {
+        App.setRoot("archive");
+    }
 }

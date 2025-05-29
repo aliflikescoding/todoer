@@ -93,6 +93,11 @@ public class PersonalController {
   }
 
   @FXML
+  private void switchToArchive() throws IOException {
+    App.setRoot("archive");
+  }
+
+  @FXML
   private void switchToCreatePersonal() {
     try {
       System.out.println("Attempting to load createPersonal.fxml from: " +
