@@ -67,6 +67,16 @@ public class TaskManager {
                 .collect(Collectors.toList());
     }
 
+    public int getActiveTasksLength() {
+        return (int) tasks.stream()
+                .filter(task -> !task.isDone())
+                .count();
+    }
+    
+    public int getTotalTasksLength() {
+        return tasks.size();
+    }    
+
     @Override
     public String toString() {
         return String.format(
