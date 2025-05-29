@@ -12,9 +12,7 @@ import java.io.InputStream;
 
 /* object import */
 import com.logic.TaskManager;
-import com.logic.Shopping;
-import com.logic.WorkTask;
-import com.logic.PersonalTask;
+import com.database.DatabaseSetup;
 
 public class App extends Application {
     private static Scene scene;
@@ -26,6 +24,12 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         // Load all icon sizes
+        DatabaseSetup.initialize();
+
+        workManager.loadFromDatabase("work_tasks");
+        personalManager.loadFromDatabase("personal_tasks");
+        shoppingManager.loadFromDatabase("shopping_tasks");
+
         loadIcons(stage, "/com/example/images/", new String[] {
                 "app-icon-16x16.png",
                 "app-icon-32x32.png",
@@ -57,6 +61,20 @@ public class App extends Application {
             } catch (IOException e) {
                 System.err.println("Error loading icon " + iconFile + ": " + e.getMessage());
             }
+        }
+    }
+
+    @Override
+    public void stop() {
+        try {
+            // Save current data to database first
+            workManager.saveToDatabase("work_tasks");
+            personalManager.saveToDatabase("personal_tasks");
+            shoppingManager.saveToDatabase("shopping_tasks");
+
+            System.out.println("Application closed - data saved to database");
+        } catch (Exception e) {
+            System.err.println("Error saving data on exit: " + e.getMessage());
         }
     }
 
