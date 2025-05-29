@@ -39,13 +39,12 @@ public class WorkTask extends Task {
     @Override
     public void markAsDone() {
         super.markAsDone();
-        setArchived(true);
     }
 
     @Override
     public String toString() {
         return String.format(
-                "{\"name\": \"%s\", \"description\": \"%s\", \"done\": %b, \"archived\": %b, \"dueDate\": \"%s\", \"isOverdue\": %b}",
-                name, description, done, archived, dueDate, isOverdue);
+                "{\"name\": \"%s\", \"description\": \"%s\", \"done\": %b, \"dueDate\": \"%s\", \"isOverdue\": %b}",
+                name, description, done, dueDate, isOverdue);
     }
 }

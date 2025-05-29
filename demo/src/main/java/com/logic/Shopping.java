@@ -41,14 +41,12 @@ public class Shopping extends Task {
     @Override
     public void markAsDone() {
         super.markAsDone();
-        setArchived(true);
     }
 
     @Override
     public String toString() {
         return String.format(
-            "{\"name\": \"%s\", \"description\": \"%s\", \"storeName\": \"%s\", \"quantity\": %d, \"price\": %.2f, \"done\": %b, \"archived\": %b}",
-            name, description, storeName, quantity, price, done, archived
-        );
+                "{\"name\": \"%s\", \"description\": \"%s\", \"storeName\": \"%s\", \"quantity\": %d, \"price\": %.2f, \"done\": %b}",
+                name, description, storeName, quantity, price, done);
     }
 }
