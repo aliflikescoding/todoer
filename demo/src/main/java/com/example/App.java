@@ -25,17 +25,6 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        shoppingManager.addTask(new Shopping("test 1", "test 1", "wallmart", 3, 3.99));
-        shoppingManager.addTask(new Shopping("test 2", "test 2", "target", 4, 4.99));
-        shoppingManager.addTask(new Shopping("test 3", "test 3", "wallgreens", 5, 5.99));
-        workManager.addTask(new WorkTask("test 1", "test 1", java.time.LocalDate.of(2025, 5, 31)));
-        workManager.addTask(new WorkTask("test 2", "test 2", java.time.LocalDate.of(2025, 6, 1)));
-        workManager.addTask(new WorkTask("test 3", "test 3", java.time.LocalDate.of(2025, 6, 2)));
-        workManager.addTask(new WorkTask("overdue test", "test desc", java.time.LocalDate.of(2025, 5, 28)));
-        personalManager.addTask(new PersonalTask("test 1", "test 1"));
-        personalManager.addTask(new PersonalTask("test 2", "test 2"));
-        personalManager.addTask(new PersonalTask("test 3", "test 3"));
-
         // Load all icon sizes
         loadIcons(stage, "/com/example/images/", new String[] {
                 "app-icon-16x16.png",
