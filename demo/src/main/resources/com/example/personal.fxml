@@ -8,6 +8,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.Region?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.171"
             xmlns:fx="http://javafx.com/fxml/1"
@@ -46,12 +47,26 @@
             </VBox>
 
             <!-- Main Content Area -->
-            <VBox alignment="CENTER" spacing="20.0" VBox.vgrow="ALWAYS">
-                <children>
-                    <Button text="Create Personal Task" onAction="#switchToCreatePersonal"/>
-                    <Label text="Personal"/>
-                </children>
-            </VBox>
+            <AnchorPane HBox.hgrow="ALWAYS">
+                <HBox alignment="CENTER_LEFT" spacing="20.0" 
+                    styleClass="list-parent-top"
+                    AnchorPane.topAnchor="20" 
+                    AnchorPane.leftAnchor="20" 
+                    AnchorPane.rightAnchor="20">
+                    <children>
+                        <Label text="Personal" styleClass="list-title"/>
+                        <Region HBox.hgrow="ALWAYS"/> <!-- This acts as a spacer -->
+                        <Button text="+ Create Personal Task" styleClass="button, button-primary" onAction="#switchToCreatePersonal"/>
+                    </children>
+                </HBox>
+                <VBox alignment="TOP_LEFT" spacing="20.0" styleClass="list-parent" 
+                    AnchorPane.topAnchor="95" AnchorPane.bottomAnchor="20" 
+                    AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
+                    <children>
+                        <!-- Your content will go here -->
+                    </children>
+                </VBox>
+            </AnchorPane>
         </HBox>
 
         <!-- Footer -->

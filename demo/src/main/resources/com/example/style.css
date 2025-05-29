@@ -138,4 +138,34 @@
   -fx-padding: 20px;
   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 6, 0.0, 0, 4);
   -fx-background-radius: 15px;
+  -fx-border-radius: 15px;
+}
+
+/* list styles */
+.list-parent {
+  -fx-background-color: -fx-surface;
+  -fx-border-color: #ccc;
+  -fx-border-width: 1px;
+  -fx-border-style: solid;
+  -fx-padding: 20px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 6, 0.0, 0, 4);
+  -fx-background-radius: 15px;
+  -fx-border-radius: 15px;
+}
+
+.list-parent-top {
+  -fx-background-color: -fx-surface;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1px;
+    -fx-border-style: solid;
+    -fx-padding: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 6, 0.0, 0, 4);
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+}
+
+.list-title {
+  -fx-text-fill: -fx-foreground;
+  -fx-font-size: 20px;
+  -fx-padding: 10px 0;
 }

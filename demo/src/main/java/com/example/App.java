@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.io.InputStream;
 
+import com.logic.Shopping;
 /* object import */
 import com.logic.TaskManager;
 
@@ -35,6 +36,10 @@ public class App extends Application {
         stage.setMaximized(true);
         stage.setMinWidth(1000);
         stage.setMinHeight(800);
+
+        shoppingManager.addTask(new Shopping("test 1", "test 1", "wallmart", 3, 3.99));
+        shoppingManager.addTask(new Shopping("test 2", "test 2", "target", 4, 4.99));
+        shoppingManager.addTask(new Shopping("test 3", "test 3", "wallgreens", 5, 5.99));
 
         scene.getStylesheets().add(getClass().getResource("/com/example/style.css").toExternalForm());
         stage.setTitle("Todoer");
