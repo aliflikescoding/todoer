@@ -169,3 +169,32 @@
   -fx-font-size: 20px;
   -fx-padding: 10px 0;
 }
+
+/* task styles */
+.task-item {
+  -fx-font-size: 14px;
+  -fx-padding: 10px;
+  -fx-background-color: #ffffff;
+  -fx-background-radius: 5px;
+  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 2, 2, 0, 0);
+  -fx-min-width: 100%;
+}
+
+.task-item:hover {
+  -fx-background-color: #f5f5f5;
+}
+
+.task-content {
+  -fx-spacing: 4px;
+}
+
+.task-name {
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #333333;
+}
+
+.task-details {
+  -fx-font-size: 12px;
+  -fx-text-fill: #666666;
+}

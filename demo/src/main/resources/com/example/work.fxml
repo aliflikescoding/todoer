@@ -59,12 +59,10 @@
                         <Button text="+ Create Work Task" styleClass="button, button-primary" onAction="#switchToCreateWork"/>
                     </children>
                 </HBox>
-                <VBox alignment="TOP_LEFT" spacing="20.0" styleClass="list-parent" 
+                <VBox fx:id="taskContainer" alignment="TOP_LEFT" spacing="10.0" styleClass="list-parent" 
                     AnchorPane.topAnchor="95" AnchorPane.bottomAnchor="20" 
                     AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
-                    <children>
-                        <!-- Your content will go here -->
-                    </children>
+                    <!-- Tasks will be dynamically added here -->
                 </VBox>
             </AnchorPane>
         </HBox>
