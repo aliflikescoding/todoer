@@ -9,7 +9,7 @@ public class WorkController {
 
   public void initialize() {
     this.workManager = App.getWorkManager();
-    System.out.println(this.workManager.showAllTasks());
+    System.out.println(this.workManager.getActive());
   }
 
   @FXML

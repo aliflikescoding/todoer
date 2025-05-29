@@ -10,9 +10,11 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.io.InputStream;
 
-import com.logic.Shopping;
 /* object import */
 import com.logic.TaskManager;
+import com.logic.Shopping;
+import com.logic.WorkTask;
+import com.logic.PersonalTask;
 
 public class App extends Application {
     private static Scene scene;
@@ -40,6 +42,13 @@ public class App extends Application {
         shoppingManager.addTask(new Shopping("test 1", "test 1", "wallmart", 3, 3.99));
         shoppingManager.addTask(new Shopping("test 2", "test 2", "target", 4, 4.99));
         shoppingManager.addTask(new Shopping("test 3", "test 3", "wallgreens", 5, 5.99));
+        workManager.addTask(new WorkTask("test 1", "test 1", java.time.LocalDate.of(2025, 5, 31)));
+        workManager.addTask(new WorkTask("test 2", "test 2", java.time.LocalDate.of(2025, 6, 1)));
+        workManager.addTask(new WorkTask("test 3", "test 3", java.time.LocalDate.of(2025, 6, 2)));
+        personalManager.addTask(new PersonalTask("test 1", "test 1"));
+        personalManager.addTask(new PersonalTask("test 2", "test 2"));
+        personalManager.addTask(new PersonalTask("test 3", "test 3"));
+
 
         scene.getStylesheets().add(getClass().getResource("/com/example/style.css").toExternalForm());
         stage.setTitle("Todoer");

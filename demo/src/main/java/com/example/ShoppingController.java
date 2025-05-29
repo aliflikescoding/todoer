@@ -10,7 +10,7 @@ public class ShoppingController {
 
   public void initialize() {
     this.shoppingManager = App.getShoppingManager();
-    System.out.println(this.shoppingManager.showAllTasks());
+    System.out.println(this.shoppingManager.getActive());
   }
 
   @FXML

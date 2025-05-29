@@ -54,9 +54,16 @@ public class TaskManager {
                 .collect(Collectors.toList());
     }
 
-    public List<Task> showArchivedTasks() {
+    public List<Task> getArchived() {
         return tasks.stream()
-                .filter(Task::isArchived)
+                .filter(Task::isDone)
+                .collect(Collectors.toList());
+    }
+
+    // New method to get active tasks (where done is false)
+    public List<Task> getActive() {
+        return tasks.stream()
+                .filter(task -> !task.isDone())
                 .collect(Collectors.toList());
     }
 

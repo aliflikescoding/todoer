@@ -11,7 +11,7 @@ public class PersonalController {
   
   public void initialize() {
     this.personalManager = App.getPersonalManager();
-    System.out.println(this.personalManager.showAllTasks());
+    System.out.println(this.personalManager.getActive());
   }
 
   @FXML
