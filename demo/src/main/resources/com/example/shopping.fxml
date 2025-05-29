@@ -61,12 +61,10 @@
                             onAction="#switchToCreateShopping"/>
                     </children>
                 </HBox>
-                <VBox alignment="TOP_LEFT" spacing="20.0" styleClass="list-parent" 
-                    AnchorPane.topAnchor="95" AnchorPane.bottomAnchor="20" 
-                    AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
-                    <children>
-                        <!-- Your content will go here -->
-                    </children>
+                <VBox fx:id="taskContainer" alignment="TOP_LEFT" spacing="10.0" styleClass="list-parent" 
+                AnchorPane.topAnchor="95" AnchorPane.bottomAnchor="20" 
+                AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
+                    <!-- Shopping items will be dynamically added here -->
                 </VBox>
             </AnchorPane>
         </HBox>
