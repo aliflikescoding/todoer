@@ -170,6 +170,38 @@
   -fx-padding: 10px 0;
 }
 
+/* Overdue task section header */
+.overdue-header {
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #d32f2f;
+  -fx-padding: 5 0 5 0;
+}
+
+/* Not overdue task section header */
+.not-overdue-header {
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+  -fx-text-fill: -fx-foreground;
+  -fx-padding: 15 0 5 0;
+}
+
+/* Overdue task item */
+.overdue-task {
+  -fx-background-color: #ffebee;
+  -fx-border-color: #d32f2f;
+  -fx-border-width: 1px;
+  -fx-border-radius: 4px;
+  -fx-padding: 8px;
+}
+
+/* Not overdue task item */
+
+/* Separator between sections */
+.separator {
+  -fx-padding: 5px;
+}
+
 /* task styles */
 .task-item {
   -fx-font-size: 14px;

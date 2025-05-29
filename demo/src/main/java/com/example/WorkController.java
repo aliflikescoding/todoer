@@ -25,48 +25,80 @@ public class WorkController {
   private void displayActiveTasks() {
     taskContainer.getChildren().clear();
 
-    System.out.println(this.workManager.getActive());
+    // Add overdue section header if there are overdue tasks
+    if (!workManager.getOverdueWorkTasks().isEmpty()) {
+      Label overdueHeader = new Label("⚠️ OVERDUE TASKS");
+      overdueHeader.getStyleClass().add("overdue-header");
+      taskContainer.getChildren().add(overdueHeader);
 
-    this.workManager.getActive().stream()
-        .filter(task -> task instanceof WorkTask)
-        .map(task -> (WorkTask) task)
-        .forEach(task -> {
-          // Create container HBox for each task
-          HBox taskItem = new HBox();
-          taskItem.getStyleClass().add("task-item");
-          taskItem.setSpacing(10);
+      // Display overdue tasks
+      workManager.getOverdueWorkTasks().forEach(task -> {
+        if (!task.isDone()) {
+          taskContainer.getChildren().add(createTaskItem(task));
+        }
+      });
 
-          // Task content
-          VBox taskContent = new VBox();
-          taskContent.getStyleClass().add("task-content");
-          HBox.setHgrow(taskContent, Priority.ALWAYS);
+      // Add separator
+      Region separator = new Region();
+      separator.getStyleClass().add("separator");
+      taskContainer.getChildren().add(separator);
+    }
 
-          Label nameLabel = new Label(task.getName());
-          nameLabel.getStyleClass().add("task-name");
+    // Add not overdue section header
+    Label notOverdueHeader = new Label("UPCOMING TASKS");
+    notOverdueHeader.getStyleClass().add("not-overdue-header");
+    taskContainer.getChildren().add(notOverdueHeader);
 
-          Label detailsLabel = new Label(String.format("%s • Due: %s",
-              task.getDescription(),
-              task.getDeadline()));
-          detailsLabel.getStyleClass().add("task-details");
+    // Display not overdue tasks
+    workManager.getNotOverdueWorkTasks().forEach(task -> {
+      taskContainer.getChildren().add(createTaskItem(task));
+    });
+  }
 
-          taskContent.getChildren().addAll(nameLabel, detailsLabel);
+  private HBox createTaskItem(WorkTask task) {
+    // Create container HBox for each task
+    HBox taskItem = new HBox();
+    taskItem.getStyleClass().add("task-item");
 
-          // Spacer to push button to the right
-          Region spacer = new Region();
-          HBox.setHgrow(spacer, Priority.ALWAYS);
+    // Add specific style for overdue tasks
+    if (workManager.getOverdueWorkTasks().contains(task)) {
+      taskItem.getStyleClass().add("overdue-task");
+    } else {
+      taskItem.getStyleClass().add("");
+    }
 
-          // Done button
-          Button doneButton = new Button("Done");
-          doneButton.getStyleClass().add("button");
-          doneButton.getStyleClass().add("button-primary");
-          doneButton.setOnAction(e -> {
-            workManager.markTaskDone(task.getName());
-            displayActiveTasks(); // Refresh the list
-          });
+    taskItem.setSpacing(10);
 
-          taskItem.getChildren().addAll(taskContent, spacer, doneButton);
-          taskContainer.getChildren().add(taskItem);
-        });
+    // Task content
+    VBox taskContent = new VBox();
+    taskContent.getStyleClass().add("task-content");
+    HBox.setHgrow(taskContent, Priority.ALWAYS);
+
+    Label nameLabel = new Label(task.getName());
+    nameLabel.getStyleClass().add("task-name");
+
+    Label detailsLabel = new Label(String.format("%s • Due: %s",
+        task.getDescription(),
+        task.getDeadline()));
+    detailsLabel.getStyleClass().add("task-details");
+
+    taskContent.getChildren().addAll(nameLabel, detailsLabel);
+
+    // Spacer to push button to the right
+    Region spacer = new Region();
+    HBox.setHgrow(spacer, Priority.ALWAYS);
+
+    // Done button
+    Button doneButton = new Button("Done");
+    doneButton.getStyleClass().add("button");
+    doneButton.getStyleClass().add("button-primary");
+    doneButton.setOnAction(e -> {
+      workManager.markTaskDone(task.getName());
+      displayActiveTasks(); // Refresh the list
+    });
+
+    taskItem.getChildren().addAll(taskContent, spacer, doneButton);
+    return taskItem;
   }
 
   @FXML

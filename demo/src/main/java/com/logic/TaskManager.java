@@ -40,6 +40,16 @@ public class TaskManager {
                 .findFirst();
     }
 
+    public List<WorkTask> getNotOverdueWorkTasks() {
+        LocalDate today = LocalDate.now();
+        return tasks.stream()
+                .filter(task -> task instanceof WorkTask)
+                .map(task -> (WorkTask) task)
+                .filter(workTask -> !workTask.isDone() &&
+                        (workTask.getDeadline().isAfter(today) || workTask.getDeadline().isEqual(today)))
+                .collect(Collectors.toList());
+    }
+
     public List<WorkTask> getOverdueWorkTasks() {
         return tasks.stream()
                 .filter(task -> task instanceof WorkTask)
