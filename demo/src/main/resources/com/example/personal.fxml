@@ -56,15 +56,15 @@
                     <children>
                         <Label text="Personal" styleClass="list-title"/>
                         <Region HBox.hgrow="ALWAYS"/> <!-- This acts as a spacer -->
-                        <Button text="+ Create Personal Task" styleClass="button, button-primary" onAction="#switchToCreatePersonal"/>
+                        <Button text="+ Create Personal Task" 
+                            styleClass="button, button-primary" 
+                            onAction="#switchToCreatePersonal"/>
                     </children>
                 </HBox>
-                <VBox alignment="TOP_LEFT" spacing="20.0" styleClass="list-parent" 
+                <VBox fx:id="taskContainer" alignment="TOP_LEFT" spacing="10.0" styleClass="list-parent" 
                     AnchorPane.topAnchor="95" AnchorPane.bottomAnchor="20" 
                     AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
-                    <children>
-                        <!-- Your content will go here -->
-                    </children>
+                    <!-- Personal tasks will be dynamically added here -->
                 </VBox>
             </AnchorPane>
         </HBox>
