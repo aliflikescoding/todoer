@@ -8,7 +8,12 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
+import com.logic.TaskManager;
+import com.logic.PersonalTask;
+
 public class CreatePersonalController {
+    private TaskManager personalManager = App.getPersonalManager();
+
     @FXML
     private TextField nameField;
     @FXML
@@ -35,7 +40,7 @@ public class CreatePersonalController {
     }
 
     @FXML
-    private void handleSubmit() {
+    private void handleSubmit() throws IOException {
         String name = nameField.getText().trim();
         String description = descriptionField.getText().trim();
 
@@ -44,8 +49,8 @@ public class CreatePersonalController {
             return; // Exit if validation fails
         }
 
-        System.out.println("Submitted: " + name + ", " + description);
-        // TODO: Save or process the form data
+        personalManager.addTask(new PersonalTask(name, description));
+        App.setRoot("personal");
     }
 
     private boolean isValidInput(String name, String description) {

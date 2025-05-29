@@ -4,7 +4,16 @@ import java.io.IOException;
 
 import javafx.fxml.FXML;
 
+import com.logic.TaskManager;
+
 public class PersonalController {
+  private TaskManager personalManager;
+  
+  public void initialize() {
+    this.personalManager = App.getPersonalManager();
+    System.out.println(this.personalManager.showAllTasks());
+  }
+
   @FXML
   private void switchToHome() throws IOException {
       App.setRoot("home");
