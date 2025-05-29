@@ -49,6 +49,5 @@ public class CreateWorkController {
 
         workManager.addTask(new WorkTask(name, description, deadline));
         App.setRoot("work");
-        // TODO: Save or process the form data
     }
 }

@@ -4,7 +4,15 @@ import java.io.IOException;
 
 import javafx.fxml.FXML;
 
+import com.logic.TaskManager;
 public class ShoppingController {
+  private TaskManager shoppingManager;
+
+  public void initialize() {
+    this.shoppingManager = App.getShoppingManager();
+    System.out.println(this.shoppingManager.showAllTasks());
+  }
+
   @FXML
   private void switchToHome() throws IOException {
       App.setRoot("home");

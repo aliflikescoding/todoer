@@ -6,7 +6,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextArea;
 
+import com.logic.TaskManager;
+import com.logic.Shopping;
 public class CreateShoppingController {
+    private TaskManager shoppingManager = App.getShoppingManager();
 
     @FXML
     private TextField nameField;
@@ -40,15 +43,21 @@ public class CreateShoppingController {
     }
 
     @FXML
-    private void handleSubmit() {
+    private void handleSubmit() throws IOException {
         String name = nameField.getText();
         String description = descriptionField.getText();
         String storeName = storeNameField.getText();
         int quantity = Integer.parseInt(quantityField.getText());
-        int price = Integer.parseInt(priceField.getText());
+        double price = Double.parseDouble(priceField.getText()); // Changed from parseInt to parseDouble
 
-        System.out
-                .println("Submitted: " + name + ", " + description + ", " + storeName + ", " + quantity + ", " + price);
-        // TODO: Save or process the form data
+        Shopping shoppingTask = new Shopping(name, description, storeName, quantity, price);
+        shoppingManager.addTask(shoppingTask);
+        try {
+            App.setRoot("shopping");
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("Error switching to shopping view: " + e.getMessage());
+        }
     }
+
 }
