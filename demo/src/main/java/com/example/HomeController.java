@@ -20,6 +20,9 @@ public class HomeController {
     @FXML
     private Label personalCountLabel;
 
+    @FXML
+    private Label archiveLabel;
+
     public void initialize() {
         this.shoppingManager = App.getShoppingManager();
         this.workManager = App.getWorkManager();
@@ -44,6 +47,11 @@ public class HomeController {
 
         if (personalCountLabel != null && personalManager != null) {
             personalCountLabel.setText(String.valueOf(personalManager.getActiveTasksLength()));
+        }
+
+        if (personalCountLabel != null && workManager != null && shoppingManager != null) {
+            archiveLabel.setText(String.valueOf(workManager.getArchivedSize() + shoppingManager
+                    .getArchivedSize()));
         }
     }
 

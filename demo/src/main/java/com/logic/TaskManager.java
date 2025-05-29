@@ -75,6 +75,12 @@ public class TaskManager {
     
     public int getTotalTasksLength() {
         return tasks.size();
+    }
+    
+    public int getArchivedSize() {
+        return (int) tasks.stream()
+                .filter(Task::isDone)
+                .count();
     }    
 
     @Override

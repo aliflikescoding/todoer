@@ -52,6 +52,7 @@
                         <ColumnConstraints hgrow="NEVER" />
                         <ColumnConstraints hgrow="NEVER" />
                         <ColumnConstraints hgrow="NEVER" />
+                        <ColumnConstraints hgrow="NEVER" />
                     </columnConstraints>
                     
                     <!-- Shopping List Box -->
@@ -75,6 +76,13 @@
                         <children>
                             <Label fx:id="personalCountLabel" text="0" styleClass="stat-number" />
                             <Label text="Personal Tasks" styleClass="stat-text" />
+                        </children>
+                    </VBox>
+
+                    <VBox onMouseClicked="#switchToArchive" GridPane.columnIndex="3" styleClass="stat-box-archive" alignment="CENTER" spacing="5.0">
+                        <children>
+                            <Label fx:id="archiveLabel" text="0" styleClass="stat-number" />
+                            <Label text="Archived" styleClass="stat-text" />
                         </children>
                     </VBox>
                 </GridPane>
