@@ -23,7 +23,7 @@ public class App extends Application {
                 "app-icon-128x128.png"
         });
 
-        scene = new Scene(loadFXML("primary"));
+        scene = new Scene(loadFXML("home"));
 
         stage.setMaximized(true);
         stage.setMinWidth(1000);
