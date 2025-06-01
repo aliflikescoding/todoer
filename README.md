@@ -33,7 +33,7 @@ cd demo
 ### 🔗 Cloning the repository
 
 ```shell
-git clone [https://github.com/aliflikescoding/react-shopping-cart.git](https://github.com/aliflikescoding/todoer)
+git clone https://github.com/aliflikescoding/todoer
 ```
 
 ## UML - diagram
