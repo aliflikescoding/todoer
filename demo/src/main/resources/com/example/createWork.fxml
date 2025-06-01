@@ -51,7 +51,7 @@
             <!-- Main Content Area -->
             <AnchorPane HBox.hgrow="ALWAYS">
                 <!-- Back button aligned to top left -->
-                <Button styleClass="button, button-primary" text="← Back to Personal" onAction="#switchToPersonal" 
+                <Button styleClass="button, button-primary" text="← Back to Work" onAction="#switchToWork" 
                         AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20"/>
                 
                 <!-- Form taking remaining width -->
