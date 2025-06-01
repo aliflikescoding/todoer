@@ -36,5 +36,5 @@ cd demo
 git clone [https://github.com/aliflikescoding/react-shopping-cart.git](https://github.com/aliflikescoding/todoer)
 ```
 
-## OOP - diagram
+## UML - diagram
 ![Diagram Tubes PBO](https://github.com/user-attachments/assets/0f7f7743-9524-4a8c-b070-0f0c5744cb46)
