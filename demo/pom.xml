@@ -66,19 +66,6 @@
                     </archive>
                 </configuration>
             </plugin>
-            <!-- Optional: For native packaging with icons -->
-            <plugin>
-                <groupId>org.panteleyev</groupId>
-                <artifactId>jpackage-maven-plugin</artifactId>
-                <version>1.5.0</version>
-                <configuration>
-                    <name>Todoer</name>
-                    <vendor>YourName</vendor>
-                    <!-- Update this path to match your icon location -->
-                    <icon>src/main/resources/com/example/images/app-icon.${icon.extension}</icon>
-                    <mainClass>com.example.App</mainClass>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 </project>
